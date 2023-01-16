@@ -1,0 +1,31 @@
+{
+  "name": "boilerplate-mjml",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm ci || npm install",
+    "start": "concurrently \"npm run watch:mjml\" \"npm run watch:html\"",
+    "build": "mjml src/index.mjml -o src/output.html",
+    "watch:mjml": "mjml -w src/index.mjml -o src/output.html",
+    "watch:html": "browser-sync start -w -s --no-notify -f \"src/output.html\" --index \"src/output.html\"",
+    "version": "npm run build && node scripts/version.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Epiksha/boilerplate-mjml.git"
+  },
+  "keywords": [],
+  "author": "Calvin Tiley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Epiksha/boilerplate-mjml/issues"
+  },
+  "homepage": "https://github.com/Epiksha/boilerplate-mjml#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.11",
+    "concurrently": "^7.6.0",
+    "mjml": "^4.13.0"
+  }
+}
