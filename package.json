@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "setup": "npm ci || npm install",
-    "start": "concurrently \"npm run watch:mjml\" \"npm run watch:html\"",
     "build": "mjml src/index.mjml -o src/output.html",
-    "watch:mjml": "mjml -w src/index.mjml -o src/output.html",
-    "watch:html": "browser-sync start -w -s --no-notify -f \"src/output.html\" --index \"src/output.html\"",
+    "setup": "npm ci || npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "version": "npm run build && node scripts/version.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "concurrently \"npm run watch:mjml\" \"npm run watch:html\"",
+    "watch:mjml": "mjml -w src/index.mjml -o src/output.html",
+    "watch:html": "browser-sync start -w -s --no-notify -f \"src/output.html\" --index \"src/output.html\""
   },
   "repository": {
     "type": "git",
